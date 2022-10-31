@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="setResult('green', 'Grønn', 30, 'solid')">Grønn</button>
+    <button onclick="setResult('red', 'Rød', 60, 'dotted')">Rød</button>
+    <button onclick="setResult('blue', 'Blå', 90, 'dashed')">Blå</button>
+    <button onclick="setResult('gray', 'Grå', 120, 'none')">Grå</button>
+    <Div id="result"></Div>
+
+    <script>
+        let example = document.getElementById('result')
+        function setResult(color, text, fontSize, border) {
+            example.innerHTML = `
+            <div style="${setColor(color)} ${setFontSize(fontSize)} ${setBorder(border)}">${text}</div>
+            `
+        }
+        function setColor(color) {
+            return `background-color: ${color};`;
+        }
+        function setFontSize(fontSize) {
+            return `font-size: ${fontSize}px;`;
+        }
+        function setBorder(border) {
+            return `border: ${border} 4px;`;
+        }
+    </script>
+</body>
+
+</html>
